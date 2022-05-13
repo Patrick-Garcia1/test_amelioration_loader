@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html lang='fr-FR'>
+        <head>
+            <title>taille image</title>
+            <meta charset='utf-8'>
+            <link rel='stylesheet' href='essai_loader_milk.css'>
+        </head>
+        <body>
+		<h1>hello</h1>
+		<div class="container">
+			<div class="container__loader">
+				<span style="--i:0;"></span>
+				<span style="--i:1;"></span>
+				<span style="--i:2;"></span>
+				<span style="--i:3;"></span>
+				<span style="--i:4;"></span>
+				<span style="--i:5;"></span>
+				<span style="--i:6;"></span>
+				<span style="--i:7;"></span>
+			</div>
+		</div>
+		<svg>
+			<filter id="yep">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="8"/>
+        		<feColorMatrix Values="
+					1 0 0 0 0
+					0 1 0 0 0
+					0 0 1 0 0
+					0 0 0 15 -12"/>			
+			</filter>
+		</svg>
+	</body>
+    </html>

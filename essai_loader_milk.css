@@ -1,0 +1,82 @@
+
+body{
+    background-color: #f4f4f4;
+	height: 3500px;
+}
+.container{
+	position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	display: flex;
+	background: black;
+	justify-content: center;
+	align-items: center;
+	animation: disparition 3.2s ease-in-out forwards;
+}
+@keyframes disparition{
+	0%,99.99%{
+		transform: scale(1);
+	}
+	100%{
+		transform: scale(0);
+	}
+}
+.container__loader{
+	position: relative;
+	width: 300px;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	filter: url(#yep); 
+	animation: disparition2 3.15s ease-in-out forwards;
+}
+@keyframes disparition2{
+	0%,90%{
+		transform: scale(1);
+	}
+	100%{
+		transform: scale(0);
+	}
+}
+.container__loader span{
+	position:  absolute;
+	left: 0;
+	transform-origin: 150px;
+	width: 100px;
+	height: 100px;
+	opacity: 0;
+	background: white;
+	border-radius: 50%;
+	box-shadow: 0 0 0 5px white;
+	animation: animate 2.8s ease-in-out forwards;
+	animation-delay: calc(0.10s * var(--i));
+}
+@keyframes animate{
+	0%,5%{
+		opacity: 0;
+		transform: rotate(0deg) translateX(120px);
+	}
+	10%,20%{
+		opacity: 1;
+		transform: rotate(0deg) translateX(120px);
+	}
+	50%{
+		opacity: 1;
+		width: 60px;
+		height: 60px;
+		transform: rotate(calc(360deg / 8 * var(--i)));
+	}
+	100%{
+		opacity: 1;
+		width: 100px;
+		height: 100px;
+		transform: rotate(0deg) translateX(120px);
+	}
+}
+svg{
+	width: 0;
+	height: 0;
+}
